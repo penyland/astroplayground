@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import MyPreactComponent from "../components/MyPreactComponent";
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="h-screen overflow-hidden">
+    <div class="grid grid-cols-2 grid-rows-2 h-full">
+      <div class="aw-full h-full orange flex justify-center items-center">
+        Top left
+      </div>
+      <div class="w-full h-full blue flex justify-center items-center">
+        <MyPreactComponent client:load />
+      </div>
+      <div class="w-full h-full green"><Welcome /></div>
+      <div class="w-full h-full yellow flex justify-center items-center">
+        Lower Right
+      </div>
+    </div>
+  </div>
 </Layout>
